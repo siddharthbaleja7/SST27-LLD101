@@ -1,5 +1,8 @@
 public class Demo09 {
     public static void main(String[] args) {
-        new OrderController().create("ORD-1");
+        // This Demo Violates SRP and DIP
+        OrderRepo orderRepo = new SqlOrderRepository();
+        OrderController orderController = new OrderController(orderRepo);
+        orderController.create("ORD-1");
     }
 }
