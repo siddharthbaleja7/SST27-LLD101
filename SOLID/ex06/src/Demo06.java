@@ -1,6 +1,7 @@
 public class Demo06 {
     public static void main(String[] args) {
-        new Aviary().release(new Bird());
-        new Aviary().release(new Penguin()); // runtime error
+        Aviary aviary = new Aviary();
+        aviary.release(new Penguin());
+        // we can also make one more bird class which implements Bird as well as Fly 
     }
 }
